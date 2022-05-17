@@ -31,18 +31,33 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(tabLayout, viewPager) { tab, index ->
             tab.text = when (index) {
                 0 -> {
-                    "FIRST"
+                    "Classic"
                 }
                 1 -> {
-                    "SECOND"
+                    "Rock"
                 }
                 2 -> {
-                    "THIRD"
+                    "Pop"
                 }
                 else -> {
                     throw Resources.NotFoundException("Position Not Found")
                 }
 
+
+            }
+            tab.icon = when (index) {
+            0 -> {
+                getDrawable(R.drawable.ic_music_note)
+            }
+            1 -> {
+                getDrawable(R.drawable.ic_music_note)
+            }
+            2 -> {
+                getDrawable(R.drawable.ic_music_note)
+            }
+            else -> {
+                throw Resources.NotFoundException("Position Not Found")
+            }
 
             }
 

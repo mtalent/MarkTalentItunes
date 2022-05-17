@@ -8,5 +8,6 @@ data class SongListing(
     val artistName : String,
     val collectionName : String,
     val artworkUrl60 : String,
-    val trackPrice : String
+    val trackPrice : String,
+    val previewUrl : String
 )

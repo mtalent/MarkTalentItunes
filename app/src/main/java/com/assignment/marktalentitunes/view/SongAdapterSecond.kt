@@ -1,5 +1,7 @@
 package com.assignment.marktalentitunes.view
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +26,12 @@ class SongAdapterSecond(private val list: List<SongListing>)
             tvAlbumName.text = songListing.collectionName
             tvArtistName.text = songListing.artistName
             tvPrice.text = songListing.trackPrice
+            itemView.setOnClickListener {
+                val intent = Intent()
+                intent.action = Intent.ACTION_VIEW
+                intent.setDataAndType(Uri.parse(songListing.previewUrl), "audio/*")
+                itemView.context.startActivity(intent)
+            }
 
             Picasso.get()
                 .load(songListing.artworkUrl60)
