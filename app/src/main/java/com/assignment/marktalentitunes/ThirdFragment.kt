@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.assignment.marktalentitunes.api.ApiService
 import com.assignment.marktalentitunes.model.ResultSongListing
 import com.assignment.marktalentitunes.view.SongAdapter
+import com.assignment.marktalentitunes.view.SongAdapterThird
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,7 +19,7 @@ import retrofit2.Retrofit
 class ThirdFragment : Fragment() {
 
     lateinit var rvSongList: RecyclerView
-    lateinit var songAdapter: SongAdapter
+    lateinit var songAdapter: SongAdapterThird
 
 
 
@@ -45,7 +46,7 @@ class ThirdFragment : Fragment() {
                     response: Response<ResultSongListing>
                 ) {
                     if (response.isSuccessful) {
-                        songAdapter = SongAdapter(response.body()!!.results)
+                        songAdapter = SongAdapterThird(response.body()!!.results)
                         rvSongList.adapter = songAdapter
                     }
                 }
