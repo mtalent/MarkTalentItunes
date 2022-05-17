@@ -38,7 +38,7 @@ class FirstFragment : Fragment() {
 
 
     private fun startRetrofit() {
-        ApiService.createRetrofit().create(ApiService::class.java).getSongListing()
+        ApiService.createRetrofit().create(ApiService::class.java).getClassicSongs()
             .enqueue(object : Callback<ResultSongListing> {
                 override fun onResponse(
                     call: Call<ResultSongListing>,

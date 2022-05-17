@@ -5,16 +5,22 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("search?term=country&amp;media=music&entity=song&limit=50")
-    fun getSongListing(
-        //@Query("results") results: Int = 50
+    @GET("search?term=pop&amp;media=music&entity=song&limit=50")
+    fun getPopSongs(
+    ):  Call<ResultSongListing>
+    @GET("search?term=classic&amp;media=music&entity=song&limit=50")
+    fun getClassicSongs(
+    ): Call<ResultSongListing>
+    @GET("search?term=rock&amp;media=music&entity=song&limit=50")
+    fun getRockSongs(
     ): Call<ResultSongListing>
 
 
-    companion object {
+            companion object {
         private var instance: Retrofit? = null
 
 
